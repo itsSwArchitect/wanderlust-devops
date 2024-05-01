@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: frontend:latest
+    ports:
+      - "5173:5173"
+    container_name: frontend
+    networks:
+      - wanderlust-network
+
+  backend:
+    image: backend:latest
+    ports:
+      - "5000:5000"
+    container_name: backend
+    depends_on:
+      - mongo
+    networks:
+      - wanderlust-network
+
+  mongo:
+    image: mongodb:latest
+    ports:
+      - "27017:27017"
+    container_name: mongodb
+    networks:
+      - wanderlust-network
+
+networks:
+  wanderlust-network:
+    external: true
