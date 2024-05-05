@@ -36,6 +36,7 @@ function HomePage() {
         </div>
       </div>
     </div>
+    <H1>Version 1.0</H1>
   );
 }
 
