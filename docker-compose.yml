@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   frontend:
-    image: frontend:latest
+    build:
+      context: /opt/projects/frontend
+      dockerfile: Dockerfile
     ports:
       - "5173:5173"
     container_name: frontend
@@ -10,7 +12,9 @@ services:
       - wanderlust-network
 
   backend:
-    image: backend:latest
+    build:
+      context: /opt/projects/backend
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     container_name: backend
@@ -20,7 +24,9 @@ services:
       - wanderlust-network
 
   mongo:
-    image: mongodb:latest
+    build:
+      context: /opt/projects/db
+      dockerfile: Dockerfile
     ports:
       - "27017:27017"
     container_name: mongodb
@@ -30,3 +36,4 @@ services:
 networks:
   wanderlust-network:
     external: true
+
