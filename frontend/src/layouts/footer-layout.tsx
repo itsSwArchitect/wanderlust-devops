@@ -7,7 +7,7 @@ function footer() {
       <section className="text-base sm:pl-4 md:pl-8 lg:pl-16">WanderLust</section>
       <section className="text-base sm:pr-4 md:pr-16 lg:pr-24">
         <span className="mr-2">&copy;</span>
-        {year} All Rights Reserved
+        {year} All Rights Reserved V1.0
       </section>
     </footer>
   );
